@@ -162,7 +162,7 @@ Now generate the full persona using this structure.
 
 
 
-#Streaming persona from Groq LLaMA 3
+#Streaming persona from Groq LLaMA 4
 def stream_persona(prompt):
     completion = client.chat.completions.create(
         model="meta-llama/llama-4-scout-17b-16e-instruct",
@@ -186,10 +186,10 @@ def stream_persona(prompt):
 import os
 
 def save_to_file(text, username, folder_path="output"):
-    # Ensure the folder exists
+    # Ensuring the folder exists
     os.makedirs(folder_path, exist_ok=True)
 
-    # Define the full file path
+    # Defining the full file path
     file_path = os.path.join(folder_path, f"{username}_persona.txt")
 
     # Write to the file
@@ -210,5 +210,5 @@ if __name__ == "__main__":
         print(f"Building persona...")
         prompt = build_prompt(username, data)
         persona_text = stream_persona(prompt)
-        save_to_file(persona_text, username, folder_path="C:/Users/Dell/Documents/reddit_personas") 
+        save_to_file(persona_text, username, folder_path="C:/Users/admin/Documents/reddit_personas") #edit the file path according to local drive path,tester wish to save 
 
